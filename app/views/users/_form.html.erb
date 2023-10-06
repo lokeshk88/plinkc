@@ -1,0 +1,41 @@
+<%= form_with(model: user,class:"row g-3") do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row g-3">
+  <div class="col-md-6">
+    <%= form.label :first_name%>
+    <%= form.text_field :first_name,class:"form-control",placeholder:"First Name"%>
+  </div>
+  <div class="col-md-6">
+     <%= form.label :last_name %>
+    <%= form.text_field :last_name, class:"form-control",placeholder:"Last Name"%>
+  </div>
+  <div class="col-12">
+    <%= form.label :Choose_file%>
+    <%= form.file_field :image ,class:"form-control"%>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.label :location %>
+    <%= form.text_field :location, class:"form-control",placeholder:"Location"%>
+  </div>
+
+  <div class="col-12">
+    <%= form.label :Description %>
+    <%= form.text_area :description, class:"form-control",placeholder:"Something about person like bio-data,career expertise,,skills,etc."%>
+ </div>
+  <div class="col-auto">
+    <%= form.submit "Record" ,class:"btn btn-primary" %>
+  </div>
+
+<% end %>

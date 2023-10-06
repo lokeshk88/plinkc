@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<div class="block">
+<%= render @user %>
+<%=@user.description%>
+<div class="row">
+  <div class="col-auto">
+  <%= link_to "Edit this user", edit_user_path(@user),class:"btn btn-success" %>
+  </div>
+  <div class="col-auto">
+  <%= link_to "Back to users", users_path ,class:"btn btn-warning"%>
+  </div>
+  <div class="col-auto">
+  <%= button_to "Destroy this user", @user,class:"btn btn-danger", method: :delete %>
+</div>
+</div>
+</div>
